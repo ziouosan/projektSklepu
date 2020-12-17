@@ -14,9 +14,11 @@ const StoreProvider = ({ children }) => {
     setCourses(data.courses);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
-    <StoreContext.Provider value={(courses, setCourses, user, setUser)}>
+    <StoreContext.Provider value={{ courses, setCourses, user, setUser }}>
       {children}
     </StoreContext.Provider>
   );
